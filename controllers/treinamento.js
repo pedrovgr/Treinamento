@@ -37,6 +37,11 @@ angular.module("treinamentoModule", [])
         //Funções
         $scope.addPerson = function(){
                 //Até então só funciona uma vez, não sei pq
+                if($scope.treinamentoObj.table.includes($scope.treinamentoObj.nome)){
+                        return;  
+                }
+                else{
                 $scope.treinamentoObj.table.push($scope.treinamentoObj.nome);
+                }
         };
 }]);
