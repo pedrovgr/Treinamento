@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app = "treinamentoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello?</title>
+    <link rel="stylesheet" href="treinamento.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src = "controllers/treinamento.js"></script>
+    <script src = "app.js"></script>
+</head>
+
+<body ng-controller = "treinamentoCtrl">
+    <div ng-view>
+    <hr />
+    <h1>{{treinamentoObj.title}}</h1>
+    <p>{{treinamentoObj.subtitle}}</p>
+    <button ng-click = "addClick()">Clique Aqui!</button>
+    <p>Já foram {{treinamentoObj.clicks}} cliques!</p>
+    <p>Hoje é dia {{treinamentoObj.date}}</p>
+    <input ng-model = "treinamentoObj.nome">
+    <br />
+    <button ng-click = "addPerson()">Adicione seu nome à lista!</button>
+    <!--onClick="document.location.reload(true)" para fazer a página dar reload (reloadar hehehe)-->
+    <table class = "center">
+        <tr ng-repeat = "x in treinamentoObj.table">
+            <td>
+                {{x}}
+            </td>
+        </tr>
+    </table>
+    <br />
+    <a href = "https://www.google.com" target = "_blank">Venha Cá!</a>
+    <a href = "./treinamento2.html">Segunda parte</a>
+    </div>
+</body>
+
+</html>

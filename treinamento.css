@@ -1,0 +1,64 @@
+body{
+    background: #000;
+}
+
+div{
+    align-content: center;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    color: antiquewhite;
+    text-align: center;
+
+}
+
+p{
+    font-size: 25px;
+    color: blue;
+    text-align: center;
+}
+
+input{
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+input.center{
+    margin: 0 auto;
+}
+
+table{
+    color: blue;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+}
+
+table.center{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+button{
+    text-align: center;
+}
+
+button.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:visited{
+    color: green;
+}
+
+a:hover{
+    color: purple;
+}
+
+a:active{
+    background-color: #fff;
+}
