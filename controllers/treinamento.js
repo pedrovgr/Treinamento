@@ -34,7 +34,25 @@ angular.module("treinamentoModule", [])
         //Atualização do dia para o $scope
         $scope.treinamentoObj.date =   dia + "/" + mes + "/" + ano;
 
+        var clock = document.getElementById("dataAtual");
+        var hora = data.getHours();
+        if (hora<10){
+                hora = "0" + hora;
+        }
+        var min = data.getMinutes();
+        if (min<10){
+                min = "0" + min;
+        }
+        var seg = data.getSeconds();
+        if (seg<10){
+                seg = "0" + seg;
+        }
+        
+        var horarioCompleto = hora + ":" + min;
+        clock.innerText = "Você entrou às " + horarioCompleto;
+
         //Funções
+
         $scope.addPerson = function(){
                 //Até então só funciona uma vez, não sei pq
                 if($scope.treinamentoObj.table.includes($scope.treinamentoObj.nome)){
@@ -44,6 +62,7 @@ angular.module("treinamentoModule", [])
                 else{
                         $scope.treinamentoObj.table.push($scope.treinamentoObj.nome);
                 }
+                console.log($scope.treinamentoObj.table);
         };
 
         $scope.deletePerson = function(){
@@ -59,6 +78,7 @@ angular.module("treinamentoModule", [])
                         return;
                 }
         };
+        console.log($scope.treinamentoObj.table);
 }])
 
 .controller("treinamentoListCtrl", ["$scope", function($scope){

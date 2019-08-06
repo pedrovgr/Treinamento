@@ -61,12 +61,16 @@ button.right{
     margin-left: auto;
 }
 
+span{
+    color: blue;
+}
+
 a.left{
     margin-left: 0%;
     margin-right: auto;
     text-align: left;
     align-content: left;
-     
+
 }
 
 a:visited{
