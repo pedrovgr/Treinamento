@@ -36,7 +36,7 @@ angular.module("treinamentoModule", [])
 
         //Funções
         $scope.addPerson = function(){
-                //Até então só funciona uma vez
+                //Até então só funciona uma vez, não sei pq
                 $scope.treinamentoObj.table.push($scope.treinamentoObj.nome);
         };
 }]);
