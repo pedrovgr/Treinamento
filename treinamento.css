@@ -51,6 +51,24 @@ button.center{
     margin-right: auto;
 }
 
+button.left{
+    margin-left: 0%;
+    margin-right: auto;
+}
+
+button.right{
+    margin-right: 0%;
+    margin-left: auto;
+}
+
+a.left{
+    margin-left: 0%;
+    margin-right: auto;
+    text-align: left;
+    align-content: left;
+     
+}
+
 a:visited{
     color: green;
 }
@@ -61,4 +79,8 @@ a:hover{
 
 a:active{
     background-color: #fff;
+}
+
+li{
+    color: blue;
 }

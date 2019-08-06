@@ -21,17 +21,21 @@
     <input ng-model = "treinamentoObj.nome">
     <br />
     <button ng-click = "addPerson()">Adicione seu nome à lista!</button>
+    <button ng-click = "deletePerson()">Delete um nome!</button>
     <!--onClick="document.location.reload(true)" para fazer a página dar reload (reloadar hehehe)-->
     <table class = "center">
         <tr ng-repeat = "x in treinamentoObj.table">
             <td>
-                {{x}}
+                {{x | uppercase}}
             </td>
         </tr>
     </table>
     <br />
     <a href = "https://www.google.com" target = "_blank">Venha Cá!</a>
+    <br>
     <a href = "./treinamento2.html">Segunda parte</a>
+    <br>
+    <a href = "./list.html">Lista de Compras</a>
     </div>
 </body>
 
