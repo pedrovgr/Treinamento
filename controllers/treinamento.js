@@ -2,6 +2,18 @@ angular.module("treinamentoModule", [])
 
 //possível adicionar vários controllers
 
+.service("treinamentoService", function($http){
+        var treinamentoservice = [];
+        treinamentoservice.nome = [];
+        $http.get("./dados.json")
+        .success(function(data){
+                treinamentoservice.nome = data;
+        })
+        .error(function(data, status){
+                alert("Algo de errado não está certo!")
+        });
+})
+
 .controller("treinamentoCtrl", ["$scope", function($scope){
         //Declara o objeto
         $scope.treinamentoObj = [];
@@ -61,7 +73,7 @@ angular.module("treinamentoModule", [])
                         return;  
                 }
                 else{
-                        $scope.treinamentoObj.table.push($scope.treinamentoObj.nome);
+                        $scope.treinamentoObj.table.push($scope.treinamentoObj.nome.toUpperCase());
                         $scope.treinamentoObj.table.sort();
                 }
                 console.log($scope.treinamentoObj.table);
@@ -90,6 +102,10 @@ angular.module("treinamentoModule", [])
                 alert(entry);
         };
         console.log($scope.treinamentoObj.table);
+
+        //$scope.$watch(function(){ return treinamentoservice.nome;}, function(table){
+        //        $scope.treinamentoObj.table = table;
+        //})
 }])
 
 .controller("treinamentoListCtrl", ["$scope", function($scope){
