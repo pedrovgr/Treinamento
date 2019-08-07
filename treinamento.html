@@ -28,14 +28,19 @@
     <button ng-click = "someForm.$valid ? deletePerson(treinamentoObj.nome) : alert('Input inválido')">Delete um nome!</button>
     <!--onClick="document.location.reload(true)" para fazer a página dar reload (reloadar hehehe)-->
     <table class = "center">
-        <tr ng-repeat = "x in treinamentoObj.table">
-            <td>
-                {{x | uppercase}}
-            </td>
-            <td>          
-                <button ng-click = "deletePerson(x)">Delete</button>
-            </td>
-        </tr>
+            <tr ng-repeat = "x in treinamentoObj.table">
+                    <!--<td>
+                        <p>{{treinamentoObj.strikedSmth}}</p>
+                        <input type = "checkbox" ng-click = "strikeSmth()">
+                        Por enquanto esse checkbox não muda nada........
+                    </td>-->
+                    <td>
+                        {{x | uppercase}}
+                    </td>
+                    <td>          
+                        <button ng-click = "deletePerson(x)">Delete</button>
+                    </td>
+                </tr>
     </table>
     <br />
     <a href = "https://www.google.com" target = "_blank">Venha pro Google!</a>

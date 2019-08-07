@@ -16,6 +16,7 @@ angular.module("treinamentoModule", [])
         $scope.treinamentoObj.subtitle = "Trem bom demais da conta, sô!";
         $scope.treinamentoObj.clicks = 0;
         $scope.treinamentoObj.nome = "Teste"
+        $scope.treinamentoObj.strikedSmth = false;
         $scope.addClick = function(){
                 $scope.treinamentoObj.clicks += 1;
         };
@@ -71,6 +72,7 @@ angular.module("treinamentoModule", [])
                         for (var i = 0; i < $scope.treinamentoObj.table.length; i++){
                                 if ($scope.treinamentoObj.table[i] == entry){
                                         $scope.treinamentoObj.table.splice(i,1);
+                                        return;
                                 }
                         } 
                 }
@@ -78,6 +80,10 @@ angular.module("treinamentoModule", [])
                         alert("Nome não está na tabela");
                         return;
                 }
+        };
+
+        $scope.strikeSmth = function(){
+                $scope.treinamentoObj.strikedSmth = !$scope.treinamentoObj.strikedSmth;
         };
 
         $scope.alert = function(entry){
@@ -101,7 +107,14 @@ angular.module("treinamentoModule", [])
         $scope.goto = function(page) {
         $scope.status = "Goto " + page;
         };
-}]);
+}])
+
+.directive("tbNome", function(){
+        return{
+                restrict: "E",
+                templateURL: "./nome.html"
+        }
+});
 
 angular.module('BlankApp', ['ngMaterial', 'ngMessages', 'treinamentoModule'])
 
@@ -122,3 +135,4 @@ angular.module('navBarDemoBasicUsage', ['ngMaterial'])
       $scope.status = "Goto " + page;
     };
 }]);
+
