@@ -65,10 +65,10 @@ angular.module("treinamentoModule", [])
                 console.log($scope.treinamentoObj.table);
         };
 
-        $scope.deletePerson = function(){
-                if($scope.treinamentoObj.table.includes($scope.treinamentoObj.nome)){
+        $scope.deletePerson = function(entry){
+                if($scope.treinamentoObj.table.includes(entry)){
                         for (var i = 0; i < $scope.treinamentoObj.table.length; i++){
-                                if ($scope.treinamentoObj.table[i] == $scope.treinamentoObj.nome){
+                                if ($scope.treinamentoObj.table[i] == entry){
                                         $scope.treinamentoObj.table.splice(i,1);
                                 }
                         } 
@@ -77,6 +77,10 @@ angular.module("treinamentoModule", [])
                         alert("Nome não está na tabela");
                         return;
                 }
+        };
+
+        $scope.alert = function(entry){
+                alert(entry);
         };
         console.log($scope.treinamentoObj.table);
 }])

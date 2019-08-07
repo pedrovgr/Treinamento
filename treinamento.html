@@ -24,14 +24,14 @@
     <input type = "text" ng-pattern = "/^[a-zA-Z]*$/" ng-model = "treinamentoObj.nome" required>
     <br>
     <p>You input is valid? {{someForm.$valid}}</p>
-    <br />
-    <button ng-click = "someForm.$valid && addPerson() " >Adicione seu nome à lista!</button>
-    <button ng-click = "someForm.$valid && deletePerson()">Delete um nome!</button>
+    <button ng-click = "someForm.$valid ? addPerson() : alert('Input inválido')">Adicione seu nome à lista!</button>
+    <button ng-click = "someForm.$valid ? deletePerson(treinamentoObj.nome) : alert('Input inválido')">Delete um nome!</button>
     <!--onClick="document.location.reload(true)" para fazer a página dar reload (reloadar hehehe)-->
     <table class = "center">
         <tr ng-repeat = "x in treinamentoObj.table">
             <td>
                 {{x | uppercase}}
+                <button ng-click = "deletePerson(x)">Somthing</button>
             </td>
         </tr>
     </table>
