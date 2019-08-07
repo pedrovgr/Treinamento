@@ -1,5 +1,13 @@
+/*somente para treinamento do NavBar*/
+.navBardemoBasicUsage md-content .ext-content {
+    padding: 50px;
+    margin: 20px;
+    background-color: #FFF2E0; }
+/*FIM do CSS para treinamento do NavBar*/
+
+
 body{
-    background: #000;
+    background: #FFF;
 }
 
 div{
@@ -9,7 +17,7 @@ div{
 
 h1{
     font-size: 50px;
-    color: antiquewhite;
+    color: black;
     text-align: center;
 
 }

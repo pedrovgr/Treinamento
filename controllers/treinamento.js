@@ -87,4 +87,12 @@ angular.module("treinamentoModule", [])
                 checked = !checked;
         };
 
+}])
+
+.controller("AppCtrl", ["$scope", function($scope){
+        $scope.currentNavItem = "page1";
+
+        $scope.goto = function(page) {
+          $scope.status = "Goto " + page;
+        };
 }]);
