@@ -17,8 +17,22 @@
     <hr />
     <h1>{{treinamentoObj.title}}</h1>
     <p>{{treinamentoObj.subtitle}}</p>
-    <button ng-click = "addClick()">Clique Aqui!</button>
+    <svg width="500" height="30">
+        <circle cx="25" cy="15" r="15" fill="green">
+            <animate attributeName="cx" from="0" to="500" dur="1s" fill="freeze" repeatCount="500"/> 
+        </circle>
+    </svg>
+    <br>
+    <svg width="500" height="30">
+        <circle cx="25" cy="15" r="15" fill="green">
+            <animate attributeName="cx" from="500" to="0" dur="1s" fill="freeze" repeatCount="500"/> 
+        </circle>
+    </svg>
+    <br>
+    <button ng-click = "addClick()" draggable="true">Clique Aqui!</button>
     <p>Já foram {{treinamentoObj.clicks}} cliques!</p>
+    <progress min="0" max="100" value={{treinamentoObj.clicks}}></progress>
+    <br>
     <span id = "dataAtual">Dia vem aqui!</span>
     <p>Hoje é dia {{treinamentoObj.date}}</p>
     <input type = "text" ng-pattern = "/^[a-zA-Z]*$/" ng-model = "treinamentoObj.nome" required>
@@ -51,6 +65,7 @@
     <br>
     <a href = "./NavBarTreinamento.html">NavBarTeste</a>
     <br>
+    <audio controls>lol</audio>
 
     
 
