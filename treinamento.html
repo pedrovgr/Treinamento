@@ -35,7 +35,18 @@
     <br>
     <span id = "dataAtual">Dia vem aqui!</span>
     <p>Hoje é dia {{treinamentoObj.date}}</p>
-    <input type = "text" ng-pattern = "/^[a-zA-Z]*$/" ng-model = "treinamentoObj.nome" required>
+    <input type = "text" ng-pattern = "/^[a-zA-Z]*$/" ng-model = "treinamentoObj.nome" list = "names" required>
+    <datalist id= "names">
+        <option value = "Pedro">
+        <option value = "Camilla">
+        <option value = "Marcelo">
+        <option value = "Grilo">
+        <option value = "Júlia">
+        <option value = "Larissa">
+        <option value = "Lucas">
+        <option value = "Ferreira">
+    </datalist>
+
     <br>
     <p>You input is valid? {{someForm.$valid}}</p>
     <button ng-click = "someForm.$valid ? addPerson() : alert('Input inválido')">Adicione seu nome à lista!</button>
