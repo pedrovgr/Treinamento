@@ -13,6 +13,7 @@
 
 <body ng-controller = "treinamentoCtrl">
     <div>
+    <form name = "someForm">
     <hr />
     <h1>{{treinamentoObj.title}}</h1>
     <p>{{treinamentoObj.subtitle}}</p>
@@ -20,10 +21,12 @@
     <p>Já foram {{treinamentoObj.clicks}} cliques!</p>
     <span id = "dataAtual">Dia vem aqui!</span>
     <p>Hoje é dia {{treinamentoObj.date}}</p>
-    <input ng-model = "treinamentoObj.nome">
+    <input type = "text" ng-pattern = "/^[a-zA-Z]*$/" ng-model = "treinamentoObj.nome" required>
+    <br>
+    <p>You input is valid? {{someForm.$valid}}</p>
     <br />
-    <button ng-click = "addPerson()">Adicione seu nome à lista!</button>
-    <button ng-click = "deletePerson()">Delete um nome!</button>
+    <button ng-click = "someForm.$valid && addPerson() " >Adicione seu nome à lista!</button>
+    <button ng-click = "someForm.$valid && deletePerson()">Delete um nome!</button>
     <!--onClick="document.location.reload(true)" para fazer a página dar reload (reloadar hehehe)-->
     <table class = "center">
         <tr ng-repeat = "x in treinamentoObj.table">
@@ -40,6 +43,11 @@
     <a href = "./list.html">Lista de Compras</a>
     <br>
     <a href = "./NavBarTreinamento.html">NavBarTeste</a>
+    <br>
+
+    
+
+    </form>
     </div>
 </body>
 

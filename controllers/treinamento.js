@@ -87,7 +87,18 @@ angular.module("treinamentoModule", [])
                 checked = !checked;
         };
 
+
 }])
+
+.controller("AppCtr2", ["$scope", function($scope){
+        $scope.currentNavItem = "page1";
+       
+        $scope.goto = function(page) {
+        $scope.status = "Goto " + page;
+        };
+}]);
+
+angular.module('BlankApp', ['ngMaterial', 'ngMessages', 'treinamentoModule'])
 
 .controller("AppCtrl", ["$scope", function($scope){
         $scope.currentNavItem = "page1";
@@ -95,4 +106,14 @@ angular.module("treinamentoModule", [])
         $scope.goto = function(page) {
           $scope.status = "Goto " + page;
         };
+}]);
+
+angular.module('navBarDemoBasicUsage', ['ngMaterial'])
+
+.controller('AppCtrl', ["$scope", function($scope){
+        $scope.currentNavItem = 'page1';
+
+    $scope.goto = function(page) {
+      $scope.status = "Goto " + page;
+    };
 }]);
