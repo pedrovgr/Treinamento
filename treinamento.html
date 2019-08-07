@@ -31,7 +31,9 @@
         <tr ng-repeat = "x in treinamentoObj.table">
             <td>
                 {{x | uppercase}}
-                <button ng-click = "deletePerson(x)">Somthing</button>
+            </td>
+            <td>          
+                <button ng-click = "deletePerson(x)">Delete</button>
             </td>
         </tr>
     </table>

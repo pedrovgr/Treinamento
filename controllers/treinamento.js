@@ -61,6 +61,7 @@ angular.module("treinamentoModule", [])
                 }
                 else{
                         $scope.treinamentoObj.table.push($scope.treinamentoObj.nome);
+                        $scope.treinamentoObj.table.sort();
                 }
                 console.log($scope.treinamentoObj.table);
         };
